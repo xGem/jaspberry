@@ -1,0 +1,21 @@
+name: jaspberry
+version: '0.1'
+summary: Autonomous Jasperchain box for mining Jaspercoins
+description: |
+  Turns a Raspberry PI 3 into a mining node of the Jasperchain network.
+  More info, please refer to: https://gitlab.com/xgem/jasperberry
+architectures:
+- amd64
+confinement: devmode
+grade: stable
+apps:
+  cli:
+    command: command-cli.wrapper
+    plugs:
+    - network
+    - home
+  node:
+    command: command-node.wrapper
+    plugs:
+    - network
+    - home

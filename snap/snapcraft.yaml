@@ -5,10 +5,25 @@ description: |
   Turns a Raspberry PI 3 into a mining node of the Jasperchain network.
   More info, please refer to: https://gitlab.com/xgem/jasperberry
 
-grade: devel # must be 'stable' to release into candidate/stable channels
 confinement: devmode # use 'strict' once you have the right plugs and slots
 
 parts:
-  my-part:
-    # See 'snapcraft plugins'
-    plugin: nil
+  jasperchaind:
+    source: .
+    plugin: dump
+    organize:
+      contrib/snap/jasperchaind: /usr/local/bin/jasperchaind
+      contrib/snap/jasperchain-cli: /usr/local/bin/jasperchain-cli
+      contrib/snap/jasperchain-util: /usr/local/bin/jasperchaind-util
+
+apps:
+  node:
+    command: jasperchaind jasper15@warpit.tarpat.com:15222 -daemon
+    plugs:
+      - network
+      - home
+  cli:
+    command: jasperchain-cli jasper15
+    plugs:
+      - network
+      - home

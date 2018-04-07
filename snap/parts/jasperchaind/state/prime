@@ -1,0 +1,7 @@
+!PrimeState
+dependency_paths: !!set {usr/lib: null, usr/lib/x86_64-linux-gnu: null}
+directories: !!set {}
+files: !!set {jasperchain-cli: null, jasperchain-util: null, jasperchaind: null}
+project_options: {}
+properties:
+  prime: ['*']

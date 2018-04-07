@@ -1,0 +1,7 @@
+!StageState
+directories: !!set {}
+files: !!set {jasperchain-cli: null, jasperchain-util: null, jasperchaind: null}
+project_options: {}
+properties:
+  filesets: {}
+  stage: ['*']
