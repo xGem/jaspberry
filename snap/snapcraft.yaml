@@ -18,12 +18,13 @@ parts:
 
 apps:
   node:
-    command: jasperchaind jasper15@warpit.tarpat.com:15222 -daemon
+    command: jasperchaind jasper15@warpit.tarpat.com:15222 -datadir=~/jasperchain -daemon
+    daemon: simple
     plugs:
-      - network
-      - home
+       - network-bind
+       - home 
   cli:
-    command: jasperchain-cli jasper15
+    command: jasperchain-cli jasper15 -datadir=~/jasperchain 
     plugs:
       - network
       - home

@@ -5,7 +5,7 @@ description: |
   Turns a Raspberry PI 3 into a mining node of the Jasperchain network.
   More info, please refer to: https://gitlab.com/xgem/jasperberry
 architectures:
-- amd64
+- armhf
 confinement: devmode
 grade: stable
 apps:
@@ -16,6 +16,7 @@ apps:
     - home
   node:
     command: command-node.wrapper
+    daemon: simple
     plugs:
-    - network
+    - network-bind
     - home

@@ -8,7 +8,7 @@ extracted_metadata:
   files: []
   metadata: !ExtractedMetadata
     _data: {}
-project_options: {deb_arch: amd64}
+project_options: {deb_arch: armhf}
 properties:
   parse-info: []
   plugin: dump
